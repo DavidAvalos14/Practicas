@@ -55,12 +55,12 @@ fun ContentDetailView(navController: NavController, id:Int) {
        TextView(texto="Detail View")
        Space(espacio = 20)
        TextView (texto=id.toString())
-       MainButton(
-           name="Return Home",
+       /*MainButton(
+           //name="Return Home",
            backColor = Color.Blue,
            color = Color.White
        ) {
            navController.navigate("Home")
-       }
+       }*/
    }
 }

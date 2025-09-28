@@ -1,14 +1,23 @@
 package com.example.practicas.components
 
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxScope
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -25,13 +34,30 @@ fun Space(espacio:Int){
     Spacer(modifier = Modifier.height(espacio.dp))
 }
 @Composable
-fun MainButton(name:String,backColor:Color,
-               color: Color,onClick:() -> Unit){
-    Button(onClick=onClick,
+fun MainButton(
+    backColor: Color,
+    color: Color,
+    modifier: Modifier = Modifier,
+    cornerRadius: Dp = 16.dp,
+    padding: Dp = 8.dp,
+    onClick: () -> Unit,
+    content: @Composable BoxScope.() -> Unit
+) {
+    Button(
+        onClick = onClick,
         colors = ButtonDefaults.buttonColors(
             contentColor = color,
             containerColor = backColor
-        )){
-        Text(text = name)
+        ),
+        modifier = modifier
+            .padding(padding)
+            .border(1.dp, Color.Black, shape = RoundedCornerShape(cornerRadius)),
+        shape = RoundedCornerShape(cornerRadius),
+        contentPadding = PaddingValues(0.dp)
+    ) {
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            content = content
+        )
     }
 }
