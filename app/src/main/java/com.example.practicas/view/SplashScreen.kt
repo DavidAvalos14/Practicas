@@ -2,14 +2,18 @@ package com.example.practicas.view
 
 import android.window.SplashScreen
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.LineHeightStyle
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.practicas.R
 import kotlinx.coroutines.delay
@@ -26,11 +30,15 @@ fun SplashScreen(navController: NavController) {
 
     Box(
         contentAlignment = Alignment.Center,
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color(0, 24, 64))
     ) {
         Image(
+            // La app se hará con equipos de la MLB
             painter = painterResource(id= R.drawable.mlb),
-            contentDescription = "Logo"
+            contentDescription = "Logo",
+            modifier = Modifier.size(200.dp)
         )
     }
 }
