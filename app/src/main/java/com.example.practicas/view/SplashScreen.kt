@@ -37,7 +37,7 @@ fun SplashScreen(navController: NavController) {
         Image(
             // La app se hará con equipos de la MLB
             painter = painterResource(id= R.drawable.mlb),
-            contentDescription = "Logo",
+            contentDescription = "LogoMLB",
             modifier = Modifier.size(200.dp)
         )
     }

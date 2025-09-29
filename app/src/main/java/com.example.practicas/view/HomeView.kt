@@ -36,7 +36,12 @@ fun HomeView(navController: NavController){
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
-                title = { TitleBar("MLB") },
+                title = { Image(
+                    painter = painterResource(id = R.drawable.mlb),
+                    contentDescription = "Logo_MLB",
+                    contentScale = ContentScale.Fit,
+                    modifier = Modifier.size(50.dp)
+                ) },
                 colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
                     containerColor = Color(0, 24, 64)
                 )
@@ -48,44 +53,38 @@ fun HomeView(navController: NavController){
 }
 @Composable
 fun ContentHomeView(navController: NavController, modifier: Modifier = Modifier) {
+    val idLA = 4;
+    val idLN = 5;
     Column(
         modifier = modifier.fillMaxSize(),
-        //verticalArrangement = Arrangement.Center,
-        //horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        //TextView("Home View")
-        //Space(espacio = 40)
-
         MainButton(
             backColor = Color.White,
             color = Color.Black,
             modifier = Modifier
                 .weight(1f)
                 .fillMaxWidth(),
-            onClick = {}
+            onClick = {navController.navigate("Detail/${idLA}")}
         ) {
             Image(
                 painter = painterResource(id = R.drawable.americana),
-                contentDescription = "Logo",
+                contentDescription = "LogoLAmericana",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxSize()
             )
         }
 
-
-        //Divider(color = Color.Black, thickness = 2.dp)
-
         MainButton(
             backColor = Color.White,
             color = Color.Black,
             modifier = Modifier
                 .weight(1f)
                 .fillMaxWidth(),
-            onClick = {}
+            onClick = {navController.navigate("Detail/${idLN}")}
         ) {
             Image(
                 painter = painterResource(id = R.drawable.nacional),
-                contentDescription = "Logo",
+                contentDescription = "LogoLNacional",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxSize()
             )

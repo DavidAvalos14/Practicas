@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.practicas.view.DetailsView
+import com.example.practicas.view.EquiposView
 import com.example.practicas.view.HomeView
 import com.example.practicas.view.SplashScreen
 
@@ -20,11 +21,20 @@ fun NavManager(){
             HomeView(navController)
         }
         composable ( route = "Detail/{id}",
-            arguments = listOf(navArgument("id") {type = NavType.IntType}) ) {
+            arguments = listOf(navArgument("id") {type = NavType.IntType})
+        ) { backStackEntry ->
+            val id = backStackEntry.arguments?.getInt("id") ?: -1
             DetailsView(navController, id)
         }
         composable( route = "Splash" ) {
             SplashScreen(navController)
+        }
+        composable(
+            route = "Equipo/{id}",
+            arguments = listOf(navArgument("id") { type = NavType.IntType })
+        ) { backStackEntry ->
+            val id = backStackEntry.arguments?.getInt("id") ?: -1
+            EquiposView(navController, id)
         }
     }
 }
