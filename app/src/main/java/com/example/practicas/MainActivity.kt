@@ -55,7 +55,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
+// Calculo ISR
 @Composable
 fun GreetingText(message:String,from:String, modifier: Modifier = Modifier) {
     val context: Context = LocalContext.current
