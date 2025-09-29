@@ -141,26 +141,32 @@ fun ContentEquiposView(navController: NavController, id:Int, modifier: Modifier 
         ) {
             Text(
                 text = when (id) {
+                    // Red Sox
                     4 -> "AÑO DE FUNDACIÓN: 1901 (124 años) " +
                             "\nCAMPEONATOS:  1903, 1912, 1915, 1916, 1918, 2004, 2007, 2013, 2018 (9 campeonatos | Empatado en 3er)." +
                             "\nRIVAL DIVISIONAL: Su acérrimo rival son los New York Yankees, equipo involucrado en la 'Maldición del bambino'. " +
                             "\nMEXICANOS DESTACADOS: Jarrén Durán, el mexicoamericano ha tenido par de temporadas explosivas con los Red Sox siendo uno de los Jerseys mas vendidos en toda MLB."
+                    // Guardianes
                     8 -> "AÑO DE FUNDACIÓN: 1894 (131 años)" +
                             "\nCAMPEONATOS: 1920, 1948 (2 campeonatos | Empatado en 15to)." +
                             "\nRIVAL DIVISIONAL: Enfrentan una rivalidad historica, en aquel lejano 1920 cuando Ray Chapman falleció de un bolazo en la cabeza propinado por un Yankee." +
                             "\nMEXICANOS DESTACADOS: Beto Avila, quien haya sido el primer mexicano de posicion en aparecer en una serie mundial (la cual perdieron en 1954)."
+                    // Marineros
                     12 -> "AÑO DE FUNDACIÓN: 1977 (48 años). " +
                             "\nCAMPEONATOS: Son uno de 5 equipos sin campeonato aún, comprensible por su juventud en la liga. " +
                             "\nRIVAL DIVISIONAL: Recientemente tiene luchas constantes con los Astros de Houston por el liderato de su división." +
                             "\nMEXICANOS DESTACADOS: Andrés Muñoz, el tiralumbre mexicano se ha consolidado como el cerrador de los Marineros y uno de los estelares en MLB (este año con 38 salvamentos)."
+                    // Marlins
                     5 -> "AÑO DE FUNDACIÓN: 1993 (32 años)." +
                             "\nCAMPEONATOS: 1997, 2003 (2 campeonatos | Empatado en el puesto 15)" +
                             "\nRIVAL DIVISIONAL: Junto con los Tampa Bay Rays compiten en Florida y son equipos jovenes, nacientes cercanos al año 2000." +
                             "\nMEXICANOS DESTACADOS: Valente Bellozo, quien ha tratado de ganar su lugar, ha tenido buenas apariciones como abridor y en labor de relevo. "
+                    // Cubs
                     10 -> "AÑO DE FUNDACIÓN: 1876 (149 años)." +
                             "\nCAMPEONATOS: 1907, 1908, 2016 (3 campeonatos | Empatado en 11ro mejor)." +
                             "\nRIVAL DIVISIONAL: Estan casi empatados con los Cardenales de San Luis en cuanto a titulos divisionales, pero tienen gran desventaja en cuanto a campeonatos." +
                             "\nMEXICANOS DESTACADOS: Javier Assad, uno de los mejores relevos de México en el WBSC se estableció con mérito entre los abridores de los longevos Chicago Cubs."
+                    // DBacks
                     15 -> "AÑO DE FUNDACIÓN: 1998 (27 años)." +
                             "\nCAMPEONATOS: 2001 (1 campeonato | 22do mejor)." +
                             "\nRIVAL DIVISIONAL: Debido a la gran cercanía ha tomado gran importancia sus juegos con Los Angeles Dodgers que incluso se han tornado agresivos." +
