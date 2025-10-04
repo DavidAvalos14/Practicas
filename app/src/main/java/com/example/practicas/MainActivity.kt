@@ -10,7 +10,10 @@ import androidx.compose.foundation.gestures.snapping.SnapPosition
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
@@ -32,6 +35,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.End
 import androidx.compose.ui.Alignment.Companion.Start
+import androidx.compose.ui.layout.ModifierLocalBeyondBoundsLayout
 import androidx.compose.ui.platform.LocalContext
 
 
@@ -59,12 +63,32 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingText(message:String,from:String, modifier: Modifier = Modifier) {
     val context: Context = LocalContext.current
-    var texto by remember { mutableStateOf(TextFieldValue(message)) }
+    var texto by remember { mutableStateOf("")}
+    var resul by remember { mutableStateOf("")}
+
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        TextField(
+            value = texto,
+            onValueChange = {  },
+            label = { Text("Entrada") },
+            readOnly = true,
+            modifier = Modifier.fillMaxWidth()
+        )
+
+        TextField(
+            value = resul,
+            onValueChange = {},
+            label = { Text("Resultado") },
+            readOnly = true,
+            modifier = Modifier.fillMaxWidth()
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
         Column(
             //modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Center,
@@ -72,12 +96,8 @@ fun GreetingText(message:String,from:String, modifier: Modifier = Modifier) {
         ) {
             Row() {
                 Button(
-                    onClick = { /*TODO*/
-                        Toast.makeText(
-                            context,
-                            texto.text,
-                            Toast.LENGTH_LONG
-                        ).show()
+                    onClick = {
+                        texto += "7"
                     },
                     elevation = ButtonDefaults.buttonElevation(
                         defaultElevation = 20.dp,
@@ -88,12 +108,8 @@ fun GreetingText(message:String,from:String, modifier: Modifier = Modifier) {
                     Text("7")
                 }
                 Button(
-                    onClick = { /*TODO*/
-                        Toast.makeText(
-                            context,
-                            texto.text,
-                            Toast.LENGTH_LONG
-                        ).show()
+                    onClick = {
+                        texto += "8"
                     },
                     elevation = ButtonDefaults.buttonElevation(
                         defaultElevation = 20.dp,
@@ -104,12 +120,8 @@ fun GreetingText(message:String,from:String, modifier: Modifier = Modifier) {
                     Text("8")
                 }
                 Button(
-                    onClick = { /*TODO*/
-                        Toast.makeText(
-                            context,
-                            texto.text,
-                            Toast.LENGTH_LONG
-                        ).show()
+                    onClick = {
+                        texto += "9"
                     },
                     elevation = ButtonDefaults.buttonElevation(
                         defaultElevation = 20.dp,
@@ -120,12 +132,8 @@ fun GreetingText(message:String,from:String, modifier: Modifier = Modifier) {
                     Text("9")
                 }
                 Button(
-                    onClick = { /*TODO*/
-                        Toast.makeText(
-                            context,
-                            texto.text,
-                            Toast.LENGTH_LONG
-                        ).show()
+                    onClick = {
+                        texto += "/"
                     },
                     elevation = ButtonDefaults.buttonElevation(
                         defaultElevation = 20.dp,
@@ -145,12 +153,8 @@ fun GreetingText(message:String,from:String, modifier: Modifier = Modifier) {
         ) {
             Row() {
                 Button(
-                    onClick = { /*TODO*/
-                        Toast.makeText(
-                            context,
-                            texto.text,
-                            Toast.LENGTH_LONG
-                        ).show()
+                    onClick = {
+                        texto += "4"
                     },
                     elevation = ButtonDefaults.buttonElevation(
                         defaultElevation = 20.dp,
@@ -161,12 +165,8 @@ fun GreetingText(message:String,from:String, modifier: Modifier = Modifier) {
                     Text("4")
                 }
                 Button(
-                    onClick = { /*TODO*/
-                        Toast.makeText(
-                            context,
-                            texto.text,
-                            Toast.LENGTH_LONG
-                        ).show()
+                    onClick = {
+                        texto += "5"
                     },
                     elevation = ButtonDefaults.buttonElevation(
                         defaultElevation = 20.dp,
@@ -177,12 +177,8 @@ fun GreetingText(message:String,from:String, modifier: Modifier = Modifier) {
                     Text("5")
                 }
                 Button(
-                    onClick = { /*TODO*/
-                        Toast.makeText(
-                            context,
-                            texto.text,
-                            Toast.LENGTH_LONG
-                        ).show()
+                    onClick = {
+                        texto += "6"
                     },
                     elevation = ButtonDefaults.buttonElevation(
                         defaultElevation = 20.dp,
@@ -193,12 +189,8 @@ fun GreetingText(message:String,from:String, modifier: Modifier = Modifier) {
                     Text("6")
                 }
                 Button(
-                    onClick = { /*TODO*/
-                        Toast.makeText(
-                            context,
-                            texto.text,
-                            Toast.LENGTH_LONG
-                        ).show()
+                    onClick = {
+                        texto += "*"
                     },
                     elevation = ButtonDefaults.buttonElevation(
                         defaultElevation = 20.dp,
@@ -206,7 +198,7 @@ fun GreetingText(message:String,from:String, modifier: Modifier = Modifier) {
                         disabledElevation = 15.dp
                     )
                 ) {
-                    Text("x")
+                    Text("*")
                 }
             }
         }
@@ -218,12 +210,8 @@ fun GreetingText(message:String,from:String, modifier: Modifier = Modifier) {
         ) {
             Row() {
                 Button(
-                    onClick = { /*TODO*/
-                        Toast.makeText(
-                            context,
-                            texto.text,
-                            Toast.LENGTH_LONG
-                        ).show()
+                    onClick = {
+                        texto += "1"
                     },
                     elevation = ButtonDefaults.buttonElevation(
                         defaultElevation = 20.dp,
@@ -234,12 +222,8 @@ fun GreetingText(message:String,from:String, modifier: Modifier = Modifier) {
                     Text("1")
                 }
                 Button(
-                    onClick = { /*TODO*/
-                        Toast.makeText(
-                            context,
-                            texto.text,
-                            Toast.LENGTH_LONG
-                        ).show()
+                    onClick = {
+                        texto += "2"
                     },
                     elevation = ButtonDefaults.buttonElevation(
                         defaultElevation = 20.dp,
@@ -250,12 +234,8 @@ fun GreetingText(message:String,from:String, modifier: Modifier = Modifier) {
                     Text("2")
                 }
                 Button(
-                    onClick = { /*TODO*/
-                        Toast.makeText(
-                            context,
-                            texto.text,
-                            Toast.LENGTH_LONG
-                        ).show()
+                    onClick = {
+                        texto += "3"
                     },
                     elevation = ButtonDefaults.buttonElevation(
                         defaultElevation = 20.dp,
@@ -266,12 +246,8 @@ fun GreetingText(message:String,from:String, modifier: Modifier = Modifier) {
                     Text("3")
                 }
                 Button(
-                    onClick = { /*TODO*/
-                        Toast.makeText(
-                            context,
-                            texto.text,
-                            Toast.LENGTH_LONG
-                        ).show()
+                    onClick = {
+                        texto += "-"
                     },
                     elevation = ButtonDefaults.buttonElevation(
                         defaultElevation = 20.dp,
@@ -291,12 +267,8 @@ fun GreetingText(message:String,from:String, modifier: Modifier = Modifier) {
         ) {
             Row() {
                 Button(
-                    onClick = { /*TODO*/
-                        Toast.makeText(
-                            context,
-                            texto.text,
-                            Toast.LENGTH_LONG
-                        ).show()
+                    onClick = {
+                        texto += "0"
                     },
                     elevation = ButtonDefaults.buttonElevation(
                         defaultElevation = 20.dp,
@@ -307,12 +279,8 @@ fun GreetingText(message:String,from:String, modifier: Modifier = Modifier) {
                     Text("0")
                 }
                 Button(
-                    onClick = { /*TODO*/
-                        Toast.makeText(
-                            context,
-                            texto.text,
-                            Toast.LENGTH_LONG
-                        ).show()
+                    onClick = {
+                        texto += "."
                     },
                     elevation = ButtonDefaults.buttonElevation(
                         defaultElevation = 20.dp,
@@ -323,12 +291,8 @@ fun GreetingText(message:String,from:String, modifier: Modifier = Modifier) {
                     Text(".")
                 }
                 Button(
-                    onClick = { /*TODO*/
-                        Toast.makeText(
-                            context,
-                            texto.text,
-                            Toast.LENGTH_LONG
-                        ).show()
+                    onClick = {
+                        texto += "="
                     },
                     elevation = ButtonDefaults.buttonElevation(
                         defaultElevation = 20.dp,
@@ -339,12 +303,8 @@ fun GreetingText(message:String,from:String, modifier: Modifier = Modifier) {
                     Text("=")
                 }
                 Button(
-                    onClick = { /*TODO*/
-                        Toast.makeText(
-                            context,
-                            texto.text,
-                            Toast.LENGTH_LONG
-                        ).show()
+                    onClick = {
+                        texto += "+"
                     },
                     elevation = ButtonDefaults.buttonElevation(
                         defaultElevation = 20.dp,
