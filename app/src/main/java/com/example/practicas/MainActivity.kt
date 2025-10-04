@@ -44,6 +44,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+            // Solo diseño básico de la calculadora
             PracticasTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
